@@ -7,13 +7,13 @@ jobs:
   build:
     name: Build Web
     env:
-      my_secret: ${{secrets.commit_secret}}
+      my_secret: ${{secrets.ACCESS_TOKEN}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
       - uses: subosito/flutter-action@v1
         with:
-          channel: 'dev'
+          channel: 'master'
       - run: flutter config --enable-web
       - run: flutter pub get
       - run: flutter build web --release
@@ -23,11 +23,11 @@ jobs:
           # type configurations: your user.email and user.name followed lines 
           # git config --global user.email your_email 
           # git config --global user.name your_name 
-          git config --global user.email onatcipli@outlook.com
-          git config --global user.name onatcipli
+          git config --global user.email arturbekk@gmail.com
+          git config --global user.name ArtBekk
           git status
           # change this remote url for examle your remote url is https://github.com/onatcipli/flutter_web.git then the following:
-          git remote add origin https://${{secrets.commit_secret}}@github.com/onatcipli/flutter_web.git
+          git remote add origin https://${{secrets.ACCESS_TOKEN}}@github.com/ArtBekk/AKGachaCalculator.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
