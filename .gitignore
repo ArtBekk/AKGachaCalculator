@@ -22,10 +22,13 @@
 #.vscode/
 
 # Flutter/Dart/Pub related
-android/
-ios/
-test/
-web/
+android
+ios
+test
+web
+pubspec.lock
+pubspec.yaml
+.metadata
 
 **/doc/api/
 **/ios/Flutter/.last_build_id
